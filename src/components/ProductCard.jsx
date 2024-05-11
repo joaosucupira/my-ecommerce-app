@@ -2,7 +2,7 @@ import { Card } from "react-bootstrap"
 
 function ProductCard({name, price, slug}) {
     return (
-        <Card>
+        <Card className="m-3">
             <Card.Body>
                 <Card.Title>
                     {slug} {name} - R$ {price}

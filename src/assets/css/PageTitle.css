@@ -1,0 +1,14 @@
+
+/* PageTitle.css */
+.page-title .p-1 {
+    transition: background-color 0.5s, color 0.5s;
+
+  }
+  
+  .page-title.hovered .p-1 {
+    cursor: pointer;
+    color: white;
+    background-color: lightblue;
+    padding: 0.05rem;
+  }
+  

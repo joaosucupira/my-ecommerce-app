@@ -24,7 +24,7 @@ function Product(){
         <>
             <Row>
                 <center>
-                    <h1>PRODUCT PAGE</h1>
+
                     <Row>
                         {products.map((product) => {
                             return(

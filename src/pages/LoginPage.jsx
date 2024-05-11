@@ -1,12 +1,14 @@
 
+import { LoginContent } from "../components/LoginContent";
 import { PageFrame } from "../components/PageFrame";
 import { PageTitle } from "../components/PageTitle";
 
 function LoginPage(){
     return(
-        <PageFrame>
-            <PageTitle name='LOGIN'/>
-        </PageFrame>
+        <PageFrame 
+        pageTitle='LOGIN'
+        content={<LoginContent/>}
+        />
     );
 }
 
