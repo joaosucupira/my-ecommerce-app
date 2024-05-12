@@ -1,9 +1,10 @@
 import React from "react";
-import { Container, Navbar, Nav, Row, Col, InputGroup, FormControl, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "react-bootstrap";
+import { Container, Navbar, Nav, Row, Col, Form, InputGroup, FormControl, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from "react-bootstrap";
 import { PageTitle } from "./PageTitle";
-import { Form } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { PageContent } from "./PageContent";
-import HomeContent from "./HomeContent";
+// import HomeContent from "./HomeContent";
+
 
 function PageFrame(props) {
   return (
@@ -18,22 +19,34 @@ function PageFrame(props) {
             
             <Nav className="me-auto">
               <Nav.Link href="/">HOME PAGE</Nav.Link>
+
             </Nav>
           </Navbar.Collapse>
+          <Navbar.Collapse>
+            <Form className="d-flex">
+                    <Button variant="outline-info" className="m-1">Search</Button>
+                    <FormControl 
+                    type="search"
+                    placeholder="Search"
+                    className="mr-2 m-1"
+                    aria-label="Search"
+                    />
 
+            </Form>
+          </Navbar.Collapse>
           <Navbar.Text>
             <div>
                 <Row>
-                    <Col>
-                        <Dropdown>
-                            <DropdownToggle variant="info" id="dropdown-basic">
+                    <Col >
+                        <Dropdown >
+                            <DropdownToggle variant="info" id="dropdown-basic" className="fw-bold">
                                 Navigate
                             </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem href="/login">Login</DropdownItem>
                                 <hr />
-                                <DropdownItem href="#">Cart</DropdownItem>
-                                <DropdownItem href="#">Orders</DropdownItem>
+                                <DropdownItem href="/cart">Cart</DropdownItem>
+                                <DropdownItem href="/orders">Orders</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                     </Col>
