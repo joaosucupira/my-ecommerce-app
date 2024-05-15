@@ -127,16 +127,17 @@ function LoginContent() {
       mode: "cors",
       body: form,
     };
-    console.log();
+    console.log(email, senha);
 
     try {
       const response = await fetch(
-        // "https://webapp353621.ip-45-79-142-173.cloudezapp.io/api/login",
-        "https://localhost:8000/login",
+        "https://webapp353621.ip-45-79-142-173.cloudezapp.io/api/login",
+        // "https://localhost:8000/login",
         options
       );
-      mensagemDeSucesso("Successfully logged in.");
+      debugger
       const data = await response.json();
+      console.log(data);
       const token = data.token
       const nomeUsuario = data.user.name
       const emailUsario = data.user.email
@@ -145,9 +146,14 @@ function LoginContent() {
       localStorage.setItem('nomeUsuario', nomeUsuario)
       localStorage.setItem('emailUsario', emailUsario)
 
-      navigate("/");
+      mensagemDeSucesso("Successfully logged in.");
+
+      navigate("/"); // redireciona a home
+      
     } catch (error) {
       mensagemDeErro("Wrong username or password.");
+      
+      console.log(error);
     }
   }
 
