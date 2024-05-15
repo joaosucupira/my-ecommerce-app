@@ -5,10 +5,11 @@ import { PageTitle } from "../components/PageTitle";
 
 function LoginPage(){
     return(
-        <PageFrame 
-        pageTitle='LOGIN'
-        content={<LoginContent/>}
-        />
+        // <PageFrame 
+        // pageTitle='LOGIN'
+        // content={<LoginContent/>}
+        // />
+        <LoginContent/>
     );
 }
 

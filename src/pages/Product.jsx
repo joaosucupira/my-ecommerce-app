@@ -12,34 +12,30 @@ function Product(){
 
     async function searchProduct(){
         try {
-            const response = await api.get("/product");
+            const response = await api.get("/products");
             setProduct(response.data);
             console.log(response.data);
+
         } catch(error) {
-            alert('Erro.');
+            alert('Ferrou.');
         }
     }
 
     return(
         <>
             <Row>
-                <center>
-
-                    <Row>
-                        {products.map((product) => {
-                            return(
-                                <Col>
-                                    <ProductCard
-                                    name={product.name}
-                                    price={product.price}
-                                    slug={product.slug}
-                                    />
-                                </Col>
-                            )
-                        })}
-                    </Row>
-
-                </center>        
+                {products.map((product) => {
+                    return(
+                        <Col>
+                            <ProductCard
+                            name={product.name}
+                            price={product.price}
+                            slug={product.slug}
+                            path={product.path}
+                            />
+                        </Col>
+                    );
+                })}
             </Row>
         </>
     );

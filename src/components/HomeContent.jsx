@@ -1,9 +1,14 @@
 import { Product } from "../pages/Product";
+import { HomeCarousel } from "./HomeCarousel";
+import { ListaProdutos } from "./ListaProdutos";
+
 
 function HomeContent(){
     return(
         <div>
-            <Product/>
+            <HomeCarousel/>
+            {/* <Product/> */}
+            <ListaProdutos/>
         </div>
     );
 }
