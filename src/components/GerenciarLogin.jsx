@@ -22,8 +22,10 @@ function GerenciarLogin()
 
   function pegarDadosLocalStorage() {
     const token = localStorage.getItem("token");
-    const nomeUsuario = localStorage.getItem("nomeUsuario");
-    const emailUsario = localStorage.getItem("emailUsario");
+    // const nomeUsuario = localStorage.getItem("nomeUsuario");
+    const nomeUsuario = localStorage.getItem("username");
+    // const emailUsario = localStorage.getItem("emailUsario");
+    const emailUsario = localStorage.getItem("useremail");
     setToken(token);
     setNomeUsario(nomeUsuario);
     setEmailUsuario(emailUsario);
@@ -31,8 +33,8 @@ function GerenciarLogin()
 
   function removerDadosLocalStorage() {
     localStorage.removeItem("token");
-    localStorage.removeItem("nomeUsuario");
-    localStorage.removeItem("emailUsario");
+    localStorage.removeItem("username");
+    localStorage.removeItem("useremail");
     pegarDadosLocalStorage();
   }
 
