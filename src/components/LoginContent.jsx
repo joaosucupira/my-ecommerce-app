@@ -151,7 +151,7 @@ function LoginContent() {
                         <InputGroup.Text id="inputSenha">?</InputGroup.Text>
                         <Form.Control
                           type="password"
-                          placeholder="Senha"
+                          placeholder="Password"
                           aria-describedby="inputSenha"
                           required
                           onChange={onchangePassword}
@@ -171,11 +171,12 @@ function LoginContent() {
                   </Col>
                 </Row>
                 <Row style={{ margin: "7%"}}>
-                  <Col className="d-grid gap-2">
-                    <a href="/" style={{textDecoration:"none"}}>
-                      <SimpleCard text="Home"/>
-                    </a>
-                  </Col>
+                      <Col md={12}>
+                        <a href="/" style={{ textDecoration: "none" }}><SimpleCard text="Home" /></a>
+
+                        <a href="/register" style={{ textDecoration: "none" }}><SimpleCard text="Register" /></a>
+                      </Col>
+
                 </Row>
               </Form>
             </Col>
