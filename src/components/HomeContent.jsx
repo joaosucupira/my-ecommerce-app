@@ -1,4 +1,4 @@
-import { Product } from "../pages/Product";
+import { Product } from "./Product";
 import { HomeCarousel } from "./HomeCarousel";
 import { ListaProdutos } from "./ListaProdutos";
 

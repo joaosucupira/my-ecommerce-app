@@ -3,7 +3,7 @@ import { Container, Navbar, Nav, Row, Col, Form, InputGroup, FormControl, Dropdo
 import { PageTitle } from "./PageTitle";
 // import { Link } from "react-router-dom";
 import { PageContent } from "./PageContent";
-import { GerenciarLogin } from "./GerenciarLogin";
+import { LoginManager } from "./LoginManager";
 // import HomeContent from "./HomeContent";
 
 
@@ -45,7 +45,7 @@ function PageFrame(props) {
                             </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem href="/login">
-                                  <GerenciarLogin/>
+                                  <LoginManager/>
                                 </DropdownItem>
                                 <hr />
                                 <DropdownItem href="/cart">Cart</DropdownItem>

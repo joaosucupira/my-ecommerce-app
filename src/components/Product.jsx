@@ -1,7 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 import api from "../_service/api";
 import { useEffect, useState } from "react";
-import { ProductCard } from "../components/ProductCard";
+import { ProductCard } from "./ProductCard";
 
 function Product(){
     const [products, setProduct] = useState([]);
@@ -17,7 +17,7 @@ function Product(){
             console.log(response.data);
 
         } catch(error) {
-            alert('Ferrou.');
+            alert('Trouble getting product.');
         }
     }
 

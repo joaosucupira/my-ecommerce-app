@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 export const CarrinhoContext = createContext();
 
 function CarrinhoContextProvider({ children }) {
-  const [listaProdutosCarrinho, setListaProdutosCarrinho] = useState([]);
+  const [listCart, setlistCart] = useState([]);
 
   useEffect(() => {
     buscarProdutosLocaStorage();
@@ -14,22 +14,22 @@ function CarrinhoContextProvider({ children }) {
 
     if (produtosLocalStorage) {
       const produtosProdutos = JSON.parse(produtosLocalStorage);
-      setListaProdutosCarrinho(produtosProdutos);
+      setlistCart(produtosProdutos);
     }
   }
 
   function salvarProdutos(lista) {
-    setListaProdutosCarrinho(lista);
+    setlistCart(lista);
     const listaDeProdutos = JSON.stringify(lista);
     localStorage.setItem("carrinho_produtos", listaDeProdutos);
   }
 
   const adicionarCarrinho = async (produto) => {
-    const qtdProdutosNoCarrinho = listaProdutosCarrinho.filter(
+    const qtdProdutosNoCarrinho = listCart.filter(
       (item) => item.idProduto == produto.idProduto
     );
     if (qtdProdutosNoCarrinho.length > 0) {
-      return toast.error("Produto já esta no seu carrinho", {
+      return toast.error("Product has already been added to cart.", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -41,11 +41,11 @@ function CarrinhoContextProvider({ children }) {
       });
     }
 
-    const listaProdutosAtualizado = [produto, ...listaProdutosCarrinho];
+    const listaProdutosAtualizado = [produto, ...listCart];
     salvarProdutos(listaProdutosAtualizado);
   };
   function removerProduto(idProduto) {
-    const listaProdutosAtualizado = listaProdutosCarrinho.filter(
+    const listaProdutosAtualizado = listCart.filter(
       (item) => item.idProduto != idProduto
     );
 
@@ -54,7 +54,7 @@ function CarrinhoContextProvider({ children }) {
 
   return (
     <CarrinhoContext.Provider
-      value={{ listaProdutosCarrinho, adicionarCarrinho, removerProduto }}
+      value={{ listCart, adicionarCarrinho, removerProduto }}
     >
       {children}
     </CarrinhoContext.Provider>
