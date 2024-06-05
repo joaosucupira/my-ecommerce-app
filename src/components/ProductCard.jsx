@@ -1,15 +1,16 @@
-import { Card, Container } from "react-bootstrap"
+import { Card, Col, Container, Row } from "react-bootstrap"
 import { ListCategories } from "./ListCategories";
+import "../assets/css/ProductCard.css";
 
 function ProductCard({id, name, price, slug, path}) {
     return (
         <>
-            <a href="/product">
-                <Container>
-                    <Card className="m-1 mt-3 p-4">
+            <a href="/product" style={{textDecoration:"none", color:"black"}}>
+                <Container fluid >
+                    {/* <Card className="m-1 mt-3 p-4">
                         <Card.Img variant="top" src={path} alt="icons"/>
                         <Card.Body>
-                            <Card.Title>{id} - {name}</Card.Title>
+                            <Card.Title>{name}</Card.Title>
                             <Card.Text>
                                 <p>{price}</p>
                                 <br/>
@@ -18,7 +19,21 @@ function ProductCard({id, name, price, slug, path}) {
                                 </p>
                             </Card.Text>
                         </Card.Body>
-                    </Card>
+                    </Card> */}
+                    <Row className="align-items-center">
+                        <Col>
+                            <Container className="img-container p-5">
+                                <img src={path} alt="Product" className="img-display" />
+                            </Container>
+                        </Col>
+                        <Col>
+                            <div>
+                                <ListCategories productId={id} />
+                                <h4>{name}</h4>
+                                <p>R$ {price}</p>
+                            </div>
+                        </Col>
+                    </Row>
                 </Container>
             </a>
         </>

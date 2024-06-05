@@ -5,13 +5,6 @@ function PageContent({children}){
         <>
             <Container className="m-4">
                 <Row>
-                    <Col>
-                        <center>
-                            <h1  className="m-3">Page content</h1>
-                        </center>
-                    </Col>
-                </Row>
-                <Row>
                     <div>
                         {children}
                     </div>
