@@ -1,6 +1,7 @@
 import { Product } from "./Product";
 import { HomeCarousel } from "./HomeCarousel";
 import { ListaProdutos } from "./ListaProdutos";
+import { ListCategories } from "./ListCategories";
 
 
 function HomeContent(){
@@ -9,6 +10,7 @@ function HomeContent(){
             <HomeCarousel/>
             {/* <Product/> */}
             <ListaProdutos/>
+            {/* <ListCategories/> */}
         </div>
     );
 }
