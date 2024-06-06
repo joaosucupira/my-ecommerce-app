@@ -6,23 +6,10 @@ function ProductCard({id, name, price, slug, path}) {
     return (
         <>
             <a href="/product" style={{textDecoration:"none", color:"black"}}>
-                <Container fluid >
-                    {/* <Card className="m-1 mt-3 p-4">
-                        <Card.Img variant="top" src={path} alt="icons"/>
-                        <Card.Body>
-                            <Card.Title>{name}</Card.Title>
-                            <Card.Text>
-                                <p>{price}</p>
-                                <br/>
-                                <p>
-                                    <ListCategories productId={id}/>
-                                </p>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card> */}
+                <Container fluid className="product-container" >
                     <Row className="align-items-center">
                         <Col>
-                            <Container className="img-container p-5">
+                            <Container className="img-container p-4">
                                 <img src={path} alt="Product" className="img-display" />
                             </Container>
                         </Col>

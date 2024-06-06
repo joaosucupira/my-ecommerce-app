@@ -52,7 +52,7 @@ function LoginManager()
 
   return (
     <Row>
-       <Col md={2}>
+       {/* <Col md={2}>
         <a href="/cart">
           <Badge
             style={{
@@ -61,19 +61,16 @@ function LoginManager()
               marginTop: "-8px",
             }}
             bg="success"
-          >
-            {cartQuantity}
+          ><p>{cartQuantity}</p>
           </Badge>
           <i className="fa fa-shopping-cart fa-2x"> </i>
         </a>
-      </Col>
+      </Col> */}
       <Col md={7}>
-        <i className="fa fa-user"> {username}</i>
-        <i className="fa fa-at"> {userEmail}</i>
-      </Col>
-      <Col md={2}>
+        <p className="fa fa-user"> {username}</p>
+        <p className="fa fa-at"> {userEmail}</p>
         <Button variant="danger" onClick={() => rmvLocalStorageData()}>
-          Log out
+          <p>Log out</p>
         </Button>{" "}
       </Col>
     </Row>

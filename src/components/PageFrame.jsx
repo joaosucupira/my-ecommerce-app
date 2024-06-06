@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Navbar, Nav, Row, Col, Form, InputGroup, FormControl, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from "react-bootstrap";
 import { PageTitle } from "./PageTitle";
 // import { Link } from "react-router-dom";
 import { PageContent } from "./PageContent";
 import { LoginManager } from "./LoginManager";
+import "../assets/css/PageFrame.css"
 // import HomeContent from "./HomeContent";
 
 
 function PageFrame(props) {
+
+  // Search bar
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  function handleSearchChange(event) {
+    setSearchTerm(event.target.value);
+    console.log(searchTerm);
+  }
+
   return (
     // NAVBAR
     <Container fluid>
       <Navbar bg="dark" data-bs-theme="dark" expand="lg">
         <Container>
 
-          <Navbar.Brand href="/">MY ECOMMERCE</Navbar.Brand>
+          <Navbar.Brand className="site-name" href="/">MY ECOMMERCE</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             
@@ -25,12 +36,18 @@ function PageFrame(props) {
           </Navbar.Collapse>
           <Navbar.Collapse>
             <Form className="d-flex">
-                    <Button variant="outline-info" className="m-1">Search</Button>
+                    <Button 
+                    variant="outline-info" 
+                    className="m-1"
+                    onClick={() => handleSearchChange()}
+                    >Search</Button>
                     <FormControl 
                     type="search"
                     placeholder="Search"
                     className="mr-2 m-1"
                     aria-label="Search"
+                    value={searchTerm}
+                    onChange={handleSearchChange}
                     />
 
             </Form>

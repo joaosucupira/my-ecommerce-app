@@ -1,0 +1,23 @@
+
+
+.category-row {
+    display: flex;
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-col {
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.category-badge {
+    border: .8px solid rgba(10, 10, 10, 0.5);
+    background-color: rgb(238, 238, 238);
+    font-size: 0.9rem;
+    color: black !important;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}

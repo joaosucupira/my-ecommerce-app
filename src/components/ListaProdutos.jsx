@@ -4,10 +4,7 @@ import { toast } from "react-toastify";
 import api from "../_service/api";
 import { ProductCard } from "./ProductCard";
 import Notification from "./Notification";
-// import { Product } from "../pages/Product";
-// import api from "../_service/api";
-// import { CardProduto } from "./CardProduto";
-
+import "../assets/css/ListaProdutos.css";
 
 function ListaProdutos() {
   const [produtos, setProdutos] = useState([]);
@@ -22,7 +19,7 @@ function ListaProdutos() {
       setProdutos(response.data);
       // console.log(response.data);
     } catch (error) {
-      Notification("Trouble getting product data.");
+      Notification.error("Trouble getting product data.");
     }
   }
 
@@ -42,15 +39,15 @@ function ListaProdutos() {
   return (
     <>
       <Row className="justify-content-md-center">
-        <Col md={4} className="m-5">
-          <center><h1>Products Spotlight</h1></center>
+        <Col md={8} className="m-5">
+          <center><h1 className="main-title">Product Spotlight</h1></center>
         </Col>
       </Row>
       <Row>
         {produtos.map((produto, index) => {
           return (
           
-            <Col md={3} key={index}>
+            <Col md={6} key={index}>
               <ProductCard    
                 id={produto.id}
                 name={produto.name}

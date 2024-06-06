@@ -1,0 +1,9 @@
+.site-name {
+    font-family: 'Tiny5-Regular';
+    /* font-weight: bold; */
+    /* color: rgb(243, 255, 82) !important; */
+    
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+}

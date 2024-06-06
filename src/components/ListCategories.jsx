@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import api from "../_service/api";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Badge, Container } from "react-bootstrap";
 import Notification from "./Notification";
+import "../assets/css/ListCategories.css";
 
 function ListCategories({ productId }) {
     const [categories, setCategory] = useState([]);
@@ -27,14 +28,18 @@ function ListCategories({ productId }) {
 
     return (
         <>
-            <Row>
-                {categories.map((category) => {
-                    return(
-                        <Col key={category.id}>
-                            <p>{category.name}</p>
+            <Row className="category-row">
+                {categories.length > 0 ? (
+                    categories.map((category) => (
+                        <Col key={category.id} className="category-col">
+                            <Badge pill bg="" className="category-badge">
+                                {category.name}
+                            </Badge>
                         </Col>
-                    );
-                })}
+                    ))
+                ) : (
+                    <p>No categories available.</p>
+                )}
             </Row>
         </>
     );

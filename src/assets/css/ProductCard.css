@@ -12,3 +12,8 @@
     width: auto;
     height: 90%;
 }
+
+.product-container {
+    border: 2px transparent black;
+    margin: 10px 10px;
+}

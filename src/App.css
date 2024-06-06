@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'Tiny5-Regular';
+  src: local('Tiny5-Regular'), url(./fonts/Tiny5-Regular.ttf);
+}
+
+/* @font-face {
+  font-family: 'Tiny5-Bold';
+  font-weight: 900;
+  src: local('Tiny5-Regular'), url(./fonts/Tiny5-Bold.ttf);
+
+} */
