@@ -11,7 +11,7 @@ function ListCategories({ productId }) {
         searchCategory();
     }, [productId]);
 
-    console.log(`${productId}`);
+    // console.log(`${productId}`);
 
     async function searchCategory() {
         try {
@@ -28,19 +28,19 @@ function ListCategories({ productId }) {
 
     return (
         <>
-            <Row className="category-row">
+            <Col className="category-row">
                 {categories.length > 0 ? (
                     categories.map((category) => (
-                        <Col key={category.id} className="category-col">
+                        <Row key={category.id} className="category-col">
                             <Badge pill bg="" className="category-badge">
-                                {category.name}
+                                <p className="category-text">{category.name}</p>
                             </Badge>
-                        </Col>
+                        </Row>
                     ))
                 ) : (
                     <p>No categories available.</p>
                 )}
-            </Row>
+            </Col>
         </>
     );
 }

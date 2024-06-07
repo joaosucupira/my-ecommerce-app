@@ -23,19 +23,6 @@ function ListaProdutos() {
     }
   }
 
-  // function mensagemDeErro(mensagem = "Mensagem de erro") {
-  //   toast.error(mensagem, {
-  //     position: "top-center",
-  //     autoClose: 5000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     theme: "dark",
-  //   });
-  // }
-
   return (
     <>
       <Row className="justify-content-md-center">

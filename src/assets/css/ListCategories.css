@@ -2,22 +2,29 @@
 
 .category-row {
     display: flex;
-    justify-content: flex-start !important;
-    flex-wrap: wrap;
-    gap: 10px;
+
+    /* flex-wrap: wrap; */
+    gap: 20%;
 }
 
 .category-col {
     display: flex;
-    align-items: center;
-    margin: 20px 0px;
+
+    align-items: start;
+    margin: 10px 0px;
+    padding: 0;
 }
 
 .category-badge {
-    border: .8px solid rgba(10, 10, 10, 0.5);
+
+    border: .8px transparent rgba(10, 10, 10, 0.5);
     background-color: rgb(238, 238, 238);
-    font-size: 0.9rem;
+    font-size: .6rem !important;
     color: black !important;
-    padding: 0.5rem 1rem;
-    white-space: nowrap;
+    margin: 0 10px;
+}
+
+.category-text {
+
+    margin: 0 0;
 }

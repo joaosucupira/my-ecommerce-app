@@ -4,9 +4,9 @@ import { PageTitle } from "./PageTitle";
 // import { Link } from "react-router-dom";
 import { PageContent } from "./PageContent";
 import { LoginManager } from "./LoginManager";
+import { SearchBar } from "./SearchBar";
 import "../assets/css/PageFrame.css"
 // import HomeContent from "./HomeContent";
-
 
 function PageFrame(props) {
 
@@ -35,7 +35,8 @@ function PageFrame(props) {
             </Nav>
           </Navbar.Collapse>
           <Navbar.Collapse>
-            <Form className="d-flex">
+            <SearchBar/>
+            {/* <Form className="d-flex">
                     <Button 
                     variant="outline-info" 
                     className="m-1"
@@ -50,7 +51,7 @@ function PageFrame(props) {
                     onChange={handleSearchChange}
                     />
 
-            </Form>
+            </Form> */}
           </Navbar.Collapse>
           <Navbar.Text>
             <div>
