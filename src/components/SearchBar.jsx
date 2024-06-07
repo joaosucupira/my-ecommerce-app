@@ -1,15 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Form, Button, FormControl } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import api from '../_service/api';
+import Notification from './Notification';
+import { SearchContext } from '../hooks/SearchContext';
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
+  const {setFilteredProducts} = useContext(SearchContext);
+  const navigate = useNavigate();
 
   function handleSearchChange(event) {
     setSearchTerm(event.target.value);
   }
 
-  function handleButtonClick() {
-    console.log(searchTerm); 
+  async function handleButtonClick() {
+    try {
+      const response = await api.get('/products');
+      console.log(response.data);
+      const allProducts = response.data;
+      const filtered = allProducts.filter(product =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      console.log(filtered);
+      setFilteredProducts(filtered);
+      navigate('/search');
+    } catch (error) {
+        console.log(error);
+      Notification.error('Error fetching products:', error);
+    }
   }
 
   useEffect(() => {
@@ -37,4 +56,4 @@ function SearchBar() {
   );
 }
 
-export {SearchBar};
+export { SearchBar };

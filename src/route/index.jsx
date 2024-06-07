@@ -7,6 +7,7 @@ import { CartPage } from "../pages/CartPage";
 import { OrdersPage } from "../pages/OrdersPage";
 import { ProductPage } from "../pages/ProductPage";
 import { RegisterPage } from "../pages/RegisterPage";
+import { SearchPage } from "../pages/SearchPage";
 
 
 
@@ -20,6 +21,7 @@ function RouterApp(){
                 <Route path="/cart" element={<CartPage/>}/>
                 <Route path="/orders" element={<OrdersPage/>}/>
                 <Route path="/product" element={<ProductPage/>}/>
+                <Route path="/search" element={<SearchPage/>}/>
             </Routes>
         </BrowserRouter>
     );
