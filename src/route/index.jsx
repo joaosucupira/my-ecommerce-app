@@ -5,14 +5,13 @@ import { HomePage } from "../pages/HomePage";
 import { LoginPage } from "../pages/LoginPage";
 import { CartPage } from "../pages/CartPage";
 import { OrdersPage } from "../pages/OrdersPage";
-import { ProductPage } from "../pages/ProductPage";
 import { RegisterPage } from "../pages/RegisterPage";
 import { SearchPage } from "../pages/SearchPage";
-
+import { ProductPage } from "../pages/ProductPage";
 
 
 function RouterApp(){
-    return(
+    return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
@@ -20,9 +19,8 @@ function RouterApp(){
                 <Route path="/register" element={<RegisterPage/>}/>
                 <Route path="/cart" element={<CartPage/>}/>
                 <Route path="/orders" element={<OrdersPage/>}/>
-                <Route path="/product" element={<ProductPage/>}/>
                 <Route path="/search" element={<SearchPage/>}/>
-                {/* <Route path="/:slug" element={<></>}/> */}
+                <Route path="/:productSlug" element={<ProductPage/>}/>
             </Routes>
         </BrowserRouter>
     );

@@ -8,6 +8,10 @@ import "../assets/css/ListaProdutos.css"
 function SearchContent() {
   const { filteredProducts } = useContext(SearchContext);
   console.log(filteredProducts);
+  filteredProducts.map((product) => {
+    console.log(product.slug);
+    return null;
+  });
   return (
     <div>
       <center>
@@ -21,6 +25,7 @@ function SearchContent() {
             name={product.name}
             price={product.price}
             path={product.path}
+            slug={product.slug}
             />
           </ListGroup.Item>
         ))}

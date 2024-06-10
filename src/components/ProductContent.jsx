@@ -7,7 +7,7 @@ function ProductContent() {
   return (
     <Container>
       <h1>Product Details</h1>
-      <Row>
+      {/* <Row>
         <Col md={6}>
           <ProductCarousel/>
         </Col>
@@ -17,7 +17,7 @@ function ProductContent() {
           <h3>$99.99</h3>
           <Button variant="primary">Add to Cart</Button>
         </Col>
-      </Row>
+      </Row> */}
     </Container>
   );
 }

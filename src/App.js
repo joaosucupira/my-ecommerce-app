@@ -3,19 +3,18 @@ import './App.css';
 import { RouterApp } from './route';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import CarrinhoContextProvider from './hooks/CarrinhoContext';
 import { SearchProvider } from './hooks/SearchContext';
+import { ProductProvider } from './hooks/ProductContext';
 
 function App() {
   return (
     <>
-      <SearchProvider>
-        <CarrinhoContextProvider>
-          <ToastContainer/>
-              <RouterApp/>
-        </CarrinhoContextProvider>
-      </SearchProvider>
-
+      <ProductProvider>
+        <SearchProvider>
+            <ToastContainer/>
+              <RouterApp/>          
+        </SearchProvider>
+      </ProductProvider>
     </>
   );
 }
