@@ -22,6 +22,7 @@ function RouterApp(){
                 <Route path="/orders" element={<OrdersPage/>}/>
                 <Route path="/product" element={<ProductPage/>}/>
                 <Route path="/search" element={<SearchPage/>}/>
+                {/* <Route path="/:slug" element={<></>}/> */}
             </Routes>
         </BrowserRouter>
     );

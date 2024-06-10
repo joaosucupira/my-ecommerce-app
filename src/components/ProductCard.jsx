@@ -5,7 +5,7 @@ import "../assets/css/ProductCard.css";
 function ProductCard({id, name, price, slug, path}) {
     return (
         <>
-            <a href="/product" style={{textDecoration:"none", color:"black"}}>
+            <a href={`/${slug}`} style={{textDecoration:"none", color:"black"}}>
                 <Container fluid className="product-container" >
                     <Row className="align-items-center">
                         <Col>

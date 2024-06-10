@@ -40,6 +40,7 @@ function ListaProdutos() {
                 name={produto.name}
                 price={produto.price}
                 path={produto.path}
+                slug={produto.slug}
               />
             </Col>
             
