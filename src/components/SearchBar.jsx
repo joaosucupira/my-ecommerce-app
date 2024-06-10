@@ -15,6 +15,8 @@ function SearchBar() {
   }
 
   async function handleButtonClick() {
+    if (searchTerm == "") { window.location.reload(); }
+
     try {
       const response = await api.get('/products');
       console.log(response.data);
@@ -31,12 +33,17 @@ function SearchBar() {
     }
   }
 
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    handleButtonClick();
+  }
+
   useEffect(() => {
     console.log(searchTerm);
   }, [searchTerm]);
 
   return (
-    <Form className="d-flex">
+    <Form className="d-flex" onSubmit={handleFormSubmit}>
       <FormControl
         type="search"
         placeholder="Search"
