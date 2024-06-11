@@ -6,6 +6,8 @@ import { PageContent } from "./PageContent";
 import { LoginManager } from "./LoginManager";
 import { SearchBar } from "./SearchBar";
 import "../assets/css/PageFrame.css"
+import { OrdersManager } from "./OrdersManager";
+import { CartManager } from "./CartManager";
 // import HomeContent from "./HomeContent";
 
 function PageFrame(props) {
@@ -36,22 +38,6 @@ function PageFrame(props) {
           </Navbar.Collapse>
           <Navbar.Collapse>
             <SearchBar/>
-            {/* <Form className="d-flex">
-                    <Button 
-                    variant="outline-info" 
-                    className="m-1"
-                    onClick={() => handleSearchChange()}
-                    >Search</Button>
-                    <FormControl 
-                    type="search"
-                    placeholder="Search"
-                    className="mr-2 m-1"
-                    aria-label="Search"
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                    />
-
-            </Form> */}
           </Navbar.Collapse>
           <Navbar.Text>
             <div>
@@ -66,8 +52,14 @@ function PageFrame(props) {
                                   <LoginManager/>
                                 </DropdownItem>
                                 <hr />
-                                <DropdownItem href="/cart">Cart</DropdownItem>
-                                <DropdownItem href="/orders">Orders</DropdownItem>
+                                {/* <DropdownItem href="/cart">Cart</DropdownItem> */}
+                                {/* <DropdownItem href="/orders">Orders</DropdownItem> */}
+                                <DropdownItem>
+                                  <CartManager/>
+                                </DropdownItem>
+                                <DropdownItem>
+                                  <OrdersManager/>
+                                </DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                     </Col>

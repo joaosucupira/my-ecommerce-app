@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Badge, Button, Col, Row } from "react-bootstrap";
-import { CarrinhoContext } from "../hooks/CarrinhoContext";
+// import { CarrinhoContext } from "../hooks/CarrinhoContext";
 
 function LoginManager() 
 {
@@ -8,13 +8,13 @@ function LoginManager()
   const [username, setUsername] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
 
-  const [cartQuantity, setCartQuantity] = useState(0);
-  const { listCart } = useContext(CarrinhoContext);
+  // const [cartQuantity, setCartQuantity] = useState(0);
+  // const { listCart } = useContext(CarrinhoContext); // replace for actual cart context
 
-  useEffect(() => {
-    const quantity = listCart.length;
-    setCartQuantity(quantity);
-  }, [listCart]);
+  // useEffect(() => {
+  //   const quantity = listCart.length;
+  //   setCartQuantity(quantity);
+  // }, [listCart]);
 
   useEffect(() => {
     getLocalStorageData();
@@ -52,20 +52,6 @@ function LoginManager()
 
   return (
     <Row>
-       {/* <Col md={2}>
-        <a href="/cart">
-          <Badge
-            style={{
-              position: "absolute",
-              marginLeft: "20px",
-              marginTop: "-8px",
-            }}
-            bg="success"
-          ><p>{cartQuantity}</p>
-          </Badge>
-          <i className="fa fa-shopping-cart fa-2x"> </i>
-        </a>
-      </Col> */}
       <Col md={7}>
         <p className="fa fa-user"> {username}</p>
         <p className="fa fa-at"> {userEmail}</p>

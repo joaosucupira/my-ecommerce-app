@@ -9,8 +9,8 @@ function CartPage(){
     return(
         <PageFrame 
         pageTitle='CART'
-        // content={<CartContent/>}
-        content={<Cart/>}
+        content={<CartContent/>}
+        // content={<Cart/>}
         />
     );
 }
