@@ -14,6 +14,7 @@ import "../assets/css/login.css";
 import SimpleCard from "./SimpleCard";
 import { ErrorMessage } from "./ErrorMessage";
 import axios from "axios";
+import api from "../_service/api";
 
 function LoginContent() {
   const [validated, setValidated] = useState(false);
@@ -64,8 +65,8 @@ function LoginContent() {
     try {
       // LOGIN
       // debugger
-      const loginResponse = await axios.post(
-        "http://localhost:8000/api/login",
+      const loginResponse = await api.post(
+        "/login",
         { email, password },
         {
           Headers: {
@@ -80,8 +81,8 @@ function LoginContent() {
       console.log(token);
 
       // TOKEN TO BEARER
-      const userResponse = await axios.get(
-        "http://localhost:8000/api/user",
+      const userResponse = await api.get(
+        "/user",
         {
             headers: {
                 "Authorization": `Bearer ${token}`
